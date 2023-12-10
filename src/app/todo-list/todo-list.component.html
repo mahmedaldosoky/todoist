@@ -1,0 +1,54 @@
+<!-- src/app/todo-list/todo-list.component.html -->
+<div class="p-fluid">
+  <div class="p-inputgroup">
+    <input
+      pInputText
+      [(ngModel)]="newItem"
+      placeholder="Add a new todo"
+      autofocus
+    />
+    <button
+      pButton
+      label="Add"
+      icon="pi pi-plus"
+      (click)="addTodo()"
+      class="p-button-warning"
+    ></button>
+  </div>
+
+  <ul class="p-listbox">
+    <li
+      *ngFor="let item of todoItems; let i = index"
+      class="p-listbox-item"
+      [@fadeInOut]
+      [@completeTask]
+    >
+      <span [style.textDecoration]="item.completed ? 'line-through' : 'none'">
+        {{ item.text }}
+      </span>
+      <button
+        pButton
+        style="color: rgb(216, 21, 21)"
+        icon="{{ item.completed ? 'pi pi-undo' : 'pi pi-check' }}"
+        class="p-button-text"
+        (click)="removeTodo(i)"
+      ></button>
+    </li>
+  </ul>
+
+  <p-dialog
+    header="Bravo 👏👏"
+    [(visible)]="displayDialog"
+    [dismissableMask]="true"
+    [modal]="true"
+    [closable]="true"
+    [responsive]="true"
+    [baseZIndex]="10000"
+    [closeOnEscape]="true"
+    (onHide)="closeBravoDialog()"
+    [style]="{ width: '70%', top: '-25%' }"
+  >
+    <p style="font-size: 18px">{{ dialogMessage }}</p>
+    <!-- Set the font size -->
+  </p-dialog>
+</div>

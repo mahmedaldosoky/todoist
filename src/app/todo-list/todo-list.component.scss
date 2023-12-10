@@ -1,0 +1,67 @@
+/* src/app/todo-list/todo-list.component.css */
+:host {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.p-inputgroup {
+  margin-bottom: 1rem;
+}
+
+.p-listbox {
+  list-style-type: none;
+  padding: 0;
+}
+
+.p-listbox-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: large;
+}
+
+.p-button-text .pi-trash {
+  color: red; /* Change the delete button icon color to red */
+}
+
+/* Animation styles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeInOut {
+  animation: fadeInOut 300ms ease-in-out;
+}
+
+::ng-deep .p-dialog {
+    .ui-dialog-content {
+      max-height: none; /* Remove the max height to allow the dialog to grow */
+    }
+  
+    .ui-dialog-titlebar {
+      font-size: 20px; /* Set the font size of the dialog title */
+    }
+  
+    .ui-dialog-footer {
+      display: none; /* Optional: Hide the footer */
+    }
+  }
+  

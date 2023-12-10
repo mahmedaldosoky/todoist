@@ -1,0 +1,21 @@
+/* src/app/app.component.css */
+body, html {
+    margin: 0;
+    height: 100%;
+  }
+  
+  app-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .custom-toast {
+    .p-toast-message {
+      background-color: #28a745;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+  
